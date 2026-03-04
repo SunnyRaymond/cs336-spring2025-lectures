@@ -22,7 +22,7 @@ However, if you want to run it on the cluster, you can do:
         ./remote_execute.sh lecture_01
 
 which copies the files to our slurm cluster, runs it there, and copies the
-results back.  You have to setup the appropriate environment and tweak some
+results back. You have to setup the appropriate environment and tweak some
 configs to make this work (these instructions are not complete).
 
 ### Frontend
@@ -35,7 +35,7 @@ Install (one-time):
         cd trace-viewer
         npm install
 
-Load a local server to view at `http://localhost:5173?trace=var/traces/sample.json`:
+Load a local server to view at `http://localhost:5173?trace=var/traces/lecture_01.json`:
 
         npm run dev
 

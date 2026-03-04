@@ -35,7 +35,14 @@ function TraceViewer() {
       try {
         const url = tracePath;
         const response = await axios.get(url);
-        setTrace(response.data);
+        let data = response.data;
+        if (typeof data === "string") {
+          data = JSON.parse(data);
+        }
+        if (!data || typeof data !== "object" || !Array.isArray(data.steps) || typeof data.files !== "object") {
+          throw new Error(`Invalid trace format at ${url}. Expected JSON with 'files' and 'steps'.`);
+        }
+        setTrace(data);
         const basePath = tracePath.split('/').pop().replace('.json', '');
         document.title = `Trace - ${basePath}`;
       } catch (error) {

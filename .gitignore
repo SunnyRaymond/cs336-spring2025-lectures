@@ -1,2 +1,6 @@
 # ignore node modules from everywhere
 node_modules/
+
+dist/
+
+__pycache__/

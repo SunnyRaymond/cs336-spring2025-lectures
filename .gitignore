@@ -1,0 +1,2 @@
+# ignore node modules from everywhere
+node_modules/
